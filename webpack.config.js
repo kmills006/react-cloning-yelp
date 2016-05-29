@@ -87,4 +87,5 @@ config.module.loaders.push({
   loader: 'style!css',
 });
 
+// export config
 module.exports = config;
