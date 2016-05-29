@@ -10,12 +10,12 @@ const src = join(root, 'src');
 const modules = join(root, 'node_modules');
 const dest = join(root, 'dist');
 
-const { env: { NODE_ENV } } = process;
+const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
 
 const config = getConfig({
   isDev,
-  in: join(src, 'src/app,js'),
+  in: join(src, 'app.js'),
   out: dest,
   clearBeforeBuild: true,
 });
