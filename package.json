@@ -37,6 +37,7 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "font-awesome": "^4.6.3",
     "lodash": "^4.13.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
