@@ -41,6 +41,15 @@ const defines = Object.keys(envVariables).reduce((memo, key) => {
 
 config.plugins = [new webpack.DefinePlugin(defines)].concat(config.plugins);
 
+// Relative Requires
+config.resolve.root = [src, modules];
+config.resolve.alias = {
+  css: join(src, 'styles'),
+  containers: join(src, 'containers'),
+  components: join(src, 'components'),
+  utils: join(src, 'utils'),
+};
+
 // CSS Modules
 config.postcss = [].concat([
   require('precss')({}),
