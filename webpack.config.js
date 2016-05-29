@@ -21,6 +21,26 @@ const config = getConfig({
   clearBeforeBuild: true,
 });
 
+// Environment Variables
+const dotenv = require('dotenv');
+const dotEnvVars = dotenv.config();
+const environmentEnv = dotenv.config({
+  path: join(root, 'config', `${NODE_ENV}.config.js`),
+  silent: true,
+});
+const envVariables = Object.assign({}, dotEnvVars, environmentEnv);
+
+const defines = Object.keys(envVariables).reduce((memo, key) => {
+  const memoClone = _.cloneDeep(memo);
+  const value = JSON.stringify(envVariables[key]);
+
+  memoClone[`__${key.toUpperCase()}__`] = value;
+
+  return memoClone;
+}, { __NODE_ENV__: JSON.stringify(NODE_ENV) });
+
+config.plugins = [new webpack.DefinePlugin(defines)].concat(config.plugins);
+
 // CSS Modules
 config.postcss = [].concat([
   require('precss')({}),
