@@ -5,15 +5,11 @@ import 'font-awesome/css/font-awesome.css';
 import './app.css';
 
 import App from 'containers/App/App';
-import Home from 'components/Home';
 
-// Routers
-import { browserHistory, Route, Router } from 'react-router';
-const routes = (
-  <Router>
-    <Route path="/" component={Home} />
-  </Router>
-);
+import { browserHistory } from 'react-router';
+import makeRoutes from './routes';
+
+const routes = makeRoutes();
 
 const mountNode = document.querySelector('#root');
 ReactDOM.render(
