@@ -1,5 +1,7 @@
 require('babel-register');
 
+const _ = require('lodash');
+
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
 const isTest = NODE_ENV === 'test';
