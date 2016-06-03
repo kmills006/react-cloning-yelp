@@ -36,5 +36,9 @@ module.exports = {
     // node globals
     "util": false,
 
+    // Tests
+    "describe": false,
+    "beforeEach": false,
+    "it": false,
   }
 };
