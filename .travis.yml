@@ -1,0 +1,12 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+node_js:
+  - '4.1.1'
+before_install:
+  - npm i -g npm@^2.0.0
+  - npm install -save-dev eslint@2.2.0 eslint-config-airbnb@6.0.2 eslint-plugin-jsx-a11y@^1.2.0 eslint-plugin-react@^4.0.0 babel-eslint@6
+script:
+  - eslint .
+  - npm test
