@@ -39,7 +39,13 @@ export class Container extends React.Component {
         <Map
           onReady={this.onReady}
           google={this.props.google}
-        />
+          visible={false}
+        >
+
+          {this.state.places.map(place => {
+            return (<div key={place.id}>{place.name}</div>);
+          })}
+        </Map>
       </div>
     );
   }
