@@ -54,6 +54,26 @@ config.resolve.alias = {
   utils: join(src, 'utils'),
 };
 
+// Testing
+if (isTest) {
+  config.externals = {
+    'react/lib/ReactContext': true,
+    'react/lib/ExecutionEnvironment': true,
+  };
+
+  config.plugins = config.plugins.filter(plugin => {
+    const name = plugin.constructor.toString();
+    const fnName = name.match(/^function (.*)\((.*\))/);
+
+    const index = [
+      'DedupePlugin',
+      'UglifyJsPlugin',
+    ].indexOf(fnName[1]);
+
+    return index < 0;
+  });
+}
+
 // CSS Modules
 config.postcss = [].concat([
   require('precss')({}),
