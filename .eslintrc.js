@@ -28,6 +28,8 @@ module.exports = {
     "no-alert": 0,
 
     "new-cap": [2, { "capIsNewExceptions": ["GoogleApiWrapper"] }],
+
+    "arrow-body-style": [1, "as-needed"],
   },
 
   // To configure global variables inside of a configuration file, use the
