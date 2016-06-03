@@ -26,6 +26,8 @@ module.exports = {
     // We prefer to allow alerts/confirms because they function as desired
     // across platforms (especially mobile)
     "no-alert": 0,
+
+    "new-cap": [2, { "capIsNewExceptions": ["GoogleApiWrapper"] }],
   },
 
   // To configure global variables inside of a configuration file, use the
@@ -43,5 +45,8 @@ module.exports = {
     "describe": false,
     "beforeEach": false,
     "it": false,
+
+    // Env Variables
+    "__GAPI_KEY__": false,
   }
 };
