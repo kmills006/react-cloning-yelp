@@ -1,3 +1,9 @@
+require('babel-register');
+
+const NODE_ENV = process.env.NODE_ENV;
+const isDev = NODE_ENV === 'development';
+const isTest = NODE_ENV === 'test';
+
 const webpack = require('webpack');
 
 const fs = require('fs');
@@ -11,8 +17,6 @@ const src = join(root, 'src');
 const modules = join(root, 'node_modules');
 const dest = join(root, 'dist');
 
-const NODE_ENV = process.env.NODE_ENV;
-const isDev = NODE_ENV === 'development';
 
 const config = getConfig({
   isDev,
