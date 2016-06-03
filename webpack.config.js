@@ -6,7 +6,7 @@ const isTest = NODE_ENV === 'test';
 
 const webpack = require('webpack');
 
-const fs = require('fs');
+// const fs = require('fs');
 const path = require('path');
 const join = path.join;
 const resolve = path.resolve;

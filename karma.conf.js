@@ -1,6 +1,6 @@
 const webpackConfig = require('./webpack.config');
 const argv = require('yargs').argv;
-const path = require('path');
+// const path = require('path');
 
 module.exports = config => {
   config.set({

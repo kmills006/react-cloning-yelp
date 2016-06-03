@@ -23,7 +23,7 @@ module.exports = {
     // particularly callbacks associated with Meteor.subscribe.
     "consistent-return": 0,
 
-    // We prefer to allow alerts/confirms because they function as desired 
+    // We prefer to allow alerts/confirms because they function as desired
     // across platforms (especially mobile)
     "no-alert": 0,
   },
@@ -35,6 +35,9 @@ module.exports = {
   globals: {
     // node globals
     "util": false,
+
+    // lodash
+    "_": false,
 
     // Tests
     "describe": false,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory, Redirect, Route, Router } from 'react-router';
+import { Redirect, Route, Router } from 'react-router';
 
 import Home from 'components/Home';
 
